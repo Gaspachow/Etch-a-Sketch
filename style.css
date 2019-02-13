@@ -35,5 +35,10 @@ h1 {
   .hor:hover {
     background-color: black;
   }
+
+  .activated {
+    background-color: black;
+    
+  }
   
   
