@@ -10,3 +10,6 @@ for (i=1;i<=16;i++){
     divCreateVer.appendChild(divCreateHor);
 }}
 
+const cell = document.querySelectorAll('.hor');
+
+
