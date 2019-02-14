@@ -1,15 +1,31 @@
-const container = document.querySelector('.container')
+const container = document.querySelector('.container');
+let squareSize = 16;
+squareCreate(squareSize)
 
-for (i=1;i<=16;i++){
-  let divCreateVer = document.createElement('div')
-  divCreateVer.classList.add('ver', 'ver'+i);
-  container.appendChild(divCreateVer)
-  for (j=1;j<=16;j++){
-    let divCreateHor = document.createElement('div')
-    divCreateHor.classList.add('hor', 'hor'+j);
-    divCreateVer.appendChild(divCreateHor);
-}}
+function squareCreate(size) {
+  for (i=1;i<=size;i++){
+    let divCreateVer = document.createElement('div');
+    divCreateVer.classList.add('ver', 'ver'+i);
+    container.appendChild(divCreateVer);
+    for (j=1;j<=size;j++){
+      let divCreateHor = document.createElement('div');
+      divCreateHor.classList.add('hor', 'id'+ i + '.' + j);
+      divCreateHor.addEventListener('mouseover', paint, false);
+      divCreateVer.appendChild(divCreateHor);
+  }}}
 
-const cell = document.querySelectorAll('.hor');
+const allCells = document.querySelectorAll('.hor');
 
 
+function drawing (nodeList, event, fn) {
+  for (i=0;i<=nodeList.length; i++) {
+    nodeList[i].addEventListener(event, fn, false);
+  }
+}
+
+function paint() {
+  this.classList.add('activated');
+  }
+
+  
+  
