@@ -3,6 +3,7 @@ let squareSize = 16;
 squareCreate(squareSize)
 
 function squareCreate(size) {
+  
   for (i=1;i<=size;i++){
     let divCreateVer = document.createElement('div');
     divCreateVer.classList.add('ver', 'ver'+i);
