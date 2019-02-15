@@ -1,9 +1,15 @@
 const container = document.querySelector('.container');
+const newSquareButton = document.querySelector('#changeSize');
 let squareSize = 16;
+
+
 squareCreate(squareSize)
+newSquareButton.addEventListener('click', newSquare, false);
+
 
 function squareCreate(size) {
-  
+  eraseSquare();
+
   for (i=1;i<=size;i++){
     let divCreateVer = document.createElement('div');
     divCreateVer.classList.add('ver', 'ver'+i);
@@ -14,8 +20,6 @@ function squareCreate(size) {
       divCreateHor.addEventListener('mouseover', paint, false);
       divCreateVer.appendChild(divCreateHor);
   }}}
-
-const allCells = document.querySelectorAll('.hor');
 
 
 function drawing (nodeList, event, fn) {
@@ -28,5 +32,21 @@ function paint() {
   this.classList.add('activated');
   }
 
+
+function eraseSquare () {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+}
+
+function newSquare() {
+  newSize = Math.floor(prompt('Enter Square Size', '16 - 124'))
+  if (16 <= squareSize <= 124) {
+    squareCreate(newSize);
+  } else {
+    alert('Please enter valid number');
+  }
+
+}
   
-  
+
