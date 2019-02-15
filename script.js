@@ -41,7 +41,9 @@ function eraseSquare () {
 
 function newSquare() {
   newSize = prompt('Enter Square Size', '16 - 124');
-  if (newSize >= 16 && newSize <= 124) {
+  if (newSize == null) {
+    return;
+  } else if (newSize >= 16 && newSize <= 124) {
     squareCreate(newSize);
   } else {
     alert('Please enter valid number');
