@@ -40,11 +40,12 @@ function eraseSquare () {
 }
 
 function newSquare() {
-  newSize = Math.floor(prompt('Enter Square Size', '16 - 124'))
-  if (16 <= squareSize <= 124) {
+  newSize = prompt('Enter Square Size', '16 - 124');
+  if (newSize >= 16 && newSize <= 124) {
     squareCreate(newSize);
   } else {
     alert('Please enter valid number');
+    newSquare();
   }
 
 }
